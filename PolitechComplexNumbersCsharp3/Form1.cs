@@ -28,11 +28,15 @@ namespace PolitechComplexNumbersCsharp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double ComplexField = Double.Parse(complexNumField1.Text);
-            double ImagField = Double.Parse(ImagNumField1.Text);
-            ComplexNumber complexNumber1 = new ComplexNumber(ComplexField, ImagField);
-            ComplexNumber complexNumber2 = new ComplexNumber(ComplexField, ImagField);
-            ComplexNumber complexNumber3 = new ComplexNumber(ComplexField, ImagField);
+            double ComplexField1 = Double.Parse(complexNumField1.Text);
+            double ImagField1 = Double.Parse(ImagNumField1.Text);
+            double ComplexField2 = Double.Parse(complexNumField2.Text);
+            double ImagField2 = Double.Parse(ImagNumField2.Text);
+            double ComplexField3 = Double.Parse(complexNumField3.Text);
+            double ImagField3 = Double.Parse(ImagNumField3.Text);
+            ComplexNumber complexNumber1 = new ComplexNumber(ComplexField1, ImagField1);
+            ComplexNumber complexNumber2 = new ComplexNumber(ComplexField2, ImagField2);
+            ComplexNumber complexNumber3 = new ComplexNumber(ComplexField3, ImagField3);
             printResults(complexNumber1);
             printResults(complexNumber2);
             printResults(complexNumber3);
@@ -42,13 +46,12 @@ namespace PolitechComplexNumbersCsharp3
         void printResults(ComplexNumber complex)
         {
             labelModule.Text = "Модуль: " + complex.getComplexModule();
-            labelImagNum.Text = "Комплексная запись: " + complex.toString();
+            labelImagNum.Text = "Комплексная запись: " + complex;
         }
 
         void printFormula(ComplexNumber complex1, ComplexNumber complex2, ComplexNumber complex3)
         {
-            
-            labelFormula.Text = "Модуль числа X: " + ComplexNumber.add(ComplexNumber.pow(complex2, 4),ComplexNumber.divide(ComplexNumber.substract(complex1, complex2), ComplexNumber.divide(complex3, complex1))).toString();
+            labelFormula.Text = "Модуль числа X: " + ((complex1^4) + ((complex1 - complex2)/(complex3*complex1))).getComplexModule();
         }
     }
 }
