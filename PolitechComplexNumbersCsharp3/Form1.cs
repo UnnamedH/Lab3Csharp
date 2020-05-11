@@ -51,7 +51,7 @@ namespace PolitechComplexNumbersCsharp3
 
         void printFormula(ComplexNumber complex1, ComplexNumber complex2, ComplexNumber complex3)
         {
-            labelFormula.Text = "Модуль числа X: " + ((pow(complex1,4)) + ((complex1 - complex2)/(complex3*complex1))).getComplexModule();
+            labelFormula.Text = "Модуль числа X: " + ((ComplexNumber.pow(complex1,4)) + ((complex1 - complex2)/(complex3*complex1))).getComplexModule();
         }
     }
 }
